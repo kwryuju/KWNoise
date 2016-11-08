@@ -95,7 +95,14 @@ int main() {
 
 		//“ü—Í‘Ò‚¿
 		auto c = cv::waitKey(0);
-		if (c == 13) break; //Enter‚ÅI—¹
+		if (c == 13) { //Enter‚Å•Û‘¶
+			cv::imwrite("valuenoise.png", val_img);
+			cv::imwrite("perlinnoise.png", per_img);
+			cv::imwrite("valuefBm.png", vfBm_img);
+			cv::imwrite("perlinfBm.png", pfBm_img);
+		}
+		if (c == 27) break; //Esc‚ÅI—¹
+		
 	}
 
 
