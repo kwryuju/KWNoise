@@ -33,10 +33,10 @@ public:
 	}
 
 	~KWValueNoise() {
-		delete index;
-		delete remainders;
-		delete res;
-		delete data;
+		delete[] index;
+		delete[] remainders;
+		delete[] res;
+		delete[] data;
 	}
 
 	// 値の取り出し
@@ -139,7 +139,7 @@ public:
 		//バッファの先頭が最終的に補間された値
 		//バッファの解放があるので変数に待避
 		double ret = buff[0];
-		delete buff;
+		delete[] buff;
 
 		return ret;
 	}
@@ -201,12 +201,12 @@ public:
 	}
 
 	~KWValueNoiseLight() {
-		delete idx0;
-		delete idx1;
-		delete index;
-		delete remainders;
-		delete permutation_table;
-		delete data;
+		delete[] idx0;
+		delete[] idx1;
+		delete[] index;
+		delete[] remainders;
+		delete[] permutation_table;
+		delete[] data;
 	}
 
 	// 値の取り出し
@@ -304,7 +304,7 @@ public:
 		//バッファの先頭が最終的に補間された値
 		//バッファの解放があるので変数に待避
 		double ret = buff[0];
-		delete buff;
+		delete[] buff;
 
 		return ret;
 	}

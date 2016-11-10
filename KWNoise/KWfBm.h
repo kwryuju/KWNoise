@@ -37,9 +37,9 @@ public:
 		next();
 	}
 	~KWfBm() {
-		delete res;
-		delete aexp;
-		delete texture;
+		delete[] res;
+		delete[] aexp;
+		delete[] texture;
 		delete noise;
 	}
 
@@ -74,7 +74,7 @@ public:
 		++time;
 		if (time > ts) time = 0;
 
-		delete vec;
+		delete[] vec;
 	}
 
 	//値の取り出し
@@ -111,8 +111,8 @@ public:
 
 	//ノイズのリセット
 	void reset(int seed = -1) {
-		delete aexp;
-		delete texture;		
+		delete[] aexp;
+		delete[] texture;		
 		delete noise;
 		init(seed);
 		next();
@@ -154,7 +154,7 @@ private:
 			internal_resolution[i] = INTERNAL_NOISE_RESOLUTION;
 		internal_resolution[dim] = ts;
 		noise = new T(dim + 1, internal_resolution, seed);
-		delete internal_resolution;
+		delete[] internal_resolution;
 	}
 
 	//ノイズを複数の周波数で足し合わせて座標における値を得る

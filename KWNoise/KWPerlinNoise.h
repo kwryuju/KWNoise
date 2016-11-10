@@ -42,13 +42,13 @@ public:
 	}
 
 	~KWPerlinNoise() {
-		delete index;
-		delete remainders;
-		delete vec_p;
-		delete v0id;
-		delete v1id;
-		delete res;
-		delete data;
+		delete[] index;
+		delete[] remainders;
+		delete[] vec_p;
+		delete[] v0id;
+		delete[] v1id;
+		delete[] res;
+		delete[] data;
 	}
 
 	// 値の取り出し
@@ -181,7 +181,7 @@ public:
 		//バッファの先頭が最終的に補間された値
 		//バッファの解放があるので変数に待避
 		double ret = buff[0];
-		delete buff;
+		delete[] buff;
 
 		//内積の値は[-1,1]なのでValue Noiseと仕様を併せるため[0,1]に直す
 		return (ret + 1.0) / 2.0;
@@ -263,15 +263,15 @@ public:
 	}
 
 	~KWPerlinNoiseLight() {
-		delete idx0;
-		delete idx1;
-		delete index;
-		delete remainders;
-		delete vec_p;
-		delete v0id;
-		delete v1id;
-		delete permutation_table;
-		delete data;
+		delete[] idx0;
+		delete[] idx1;
+		delete[] index;
+		delete[] remainders;
+		delete[] vec_p;
+		delete[] v0id;
+		delete[] v1id;
+		delete[] permutation_table;
+		delete[] data;
 	}
 
 	// 値の取り出し
@@ -399,7 +399,7 @@ public:
 		//バッファの先頭が最終的に補間された値
 		//バッファの解放があるので変数に待避
 		double ret = buff[0];
-		delete buff;
+		delete[] buff;
 
 		//内積の値は[-1,1]なのでValue Noiseと仕様を併せるため[0,1]に直す
 		return (ret + 1.0) / 2.0;
